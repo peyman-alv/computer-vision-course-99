@@ -12,8 +12,13 @@ class NMS():
     def __apply_sobel_filter(self, img: np.array) -> tuple:
         convolved = np.zeros(img.shape)
         Gx, Gy = np.zeros(img.shape), np.zeros(img.shape)
-        kernel_x = np.array(([-1, 0, 1], [-2, 0, 2], [-1, 0, 1]))
-        kernel_y = np.array(([-1, -2, -1], [0, 0, 0], [1, 2, 1])) 
+        kernel_x = np.array(([-1, 0, 1],
+                             [-2, 0, 2],
+                             [-1, 0, 1]))
+        
+        kernel_y = np.array(([-1, -2, -1],
+                             [ 0,  0,  0],
+                             [ 1,  2,  1])) 
 
         for i in range(1, img.shape[0] - 1):
             for j in range(1, img.shape[1] - 1):
